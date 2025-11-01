@@ -1,0 +1,83 @@
+--MANUAL DE COMPILAÇÃO E EXECUÇÃO - ATIVIDADE 3
+--UNIVERSIDADE ESTADUAL PAULISTA
+--Faculdade de Ciências e Tecnologia
+--Campus de Presidente Prudente
+--INFORMAÇÕES DO PROJETO
+--Curso: Bacharelado em Ciência da Computação
+
+Disciplina: Programação Orientada a Objetos II
+
+Ano Letivo: 2025
+
+Atividade: 3/5 - Padrões de Projeto (Abstract Factory)
+
+Autor: Alexandre Malavazi
+
+Data de Implementação: Outubro/2025
+
+OBJETIVO DA ATIVIDADE
+Implementar o Padrão de Projeto Abstract Factory para criar famílias de objetos relacionados (lanches vegetarianos e não vegetarianos), permitindo que o sistema possa criar produtos relacionados sem especificar suas classes concretas, seguindo as definições do GoF (Gang of Four).
+
+*INSTRUÇÕES TÉCNICAS*
+
+PRÉ-REQUISITOS:
+-Java Development Kit (JDK) versão 8 ou superior
+-Terminal/Prompt de comando
+
+*PROCEDIMENTOS DE COMPILAÇÃO*
+Acesse o diretório do projeto:
+
+cd Atividade3Alexandre_Malavazi/src
+Compile todos os arquivos fonte:
+
+javac *.java
+Execute a aplicação:
+
+java Cliente
+ESTRUTURA DE ARQUIVOS:
+
+src/
+├── AbstractFactory.java
+├── FactoryProdutor_AlexandreMalavazi.java
+├── FactoryLanche.java
+├── FactoryLancheVegetariano_AlexandreMalavazi.java
+├── FactoryLancheNaoVegetariano_AlexandreMalavazi.java
+├── Lanche.java
+├── BurgerTudo_AlexandreMalavazi.java
+├── BurgerSalada_AlexandreMalavazi.java
+├── BurgerTudoVegetariano_AlexandreMalavazi.java
+├── BurgerSaladaVegetariano_AlexandreMalavazi.java
+└── Cliente.java
+
+*RESULTADO ESPERADO*
+SAÍDA DO PROGRAMA:
+ATIVIDADE 3 - PADRÃO ABSTRACT FACTORY
+=========================================
+
+DIAGRAMA IMPLEMENTADO:
+Cliente -> FactoryProdutor -> AbstractFactory -> Lanche
+
+1. Obtendo fabrica de lanches NAO VEGETARIANOS...
+2. Criando lanches nao vegetarianos:
+-------------------------------------
+Montando Burger Tudo: carne bovina, queijo, bacon, alface, tomate, maionese
+Montando Burger Salada: carne bovina, alface, tomate, cebola, molho especial
+
+3. Obtendo fabrica de lanches VEGETARIANOS...
+
+VALIDAÇÃO DO PADRÃO:
+-Implementação correta do padrão Abstract Factory
+-Criação de famílias de objetos relacionados (vegetarianos e não vegetarianos)
+-Isolamento de classes concretas
+-Facilidade de extensão para novas famílias de produtos
+-Consistência entre produtos da mesma família
+
+CONTROLE DE VERSÃO
+Versão: 1.0
+
+Status: Implementação concluída
+
+Última revisão: Outubro/2025
+
+Documentação preparada por: Alexandre Malavazi
+Finalidade: Atividade acadêmica - Padrões de Projeto GoF

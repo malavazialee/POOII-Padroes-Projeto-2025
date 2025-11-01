@@ -1,0 +1,90 @@
+ATIVIDADE 5 - PADRÃO GRASP: CONTROLLER
+
+DEFINIÇÃO DO PADRÃO CONTROLLER
+
+O Controller é um padrão GRASP que atribui a responsabilidade de tratar eventos do sistema a uma classe que representa a camada de controle entre a interface do usuário e a lógica de negócio.
+
+*Propósito:* Coordenar as operações do sistema, recebendo solicitações da camada de apresentação e orquestrando os componentes de domínio para executar as operações necessárias.
+
+ABORDAGENS DE IMPLEMENTAÇÃO
+
+1. CONTROLADOR DE FACHADA
+
+*Características:*
+-Uma única classe controla todos os casos de uso do sistema
+-Atua como ponto único de entrada para operações do sistema
+-Centraliza o fluxo de controle
+
+*Exemplo - Sistema Bancário:*
+[Cliente] → [BancoController] → [Conta, Transação, Cliente]
+
+
+*Diagrama:*
+
++----------------+    +-------------------+    +-------------+
+|   Interface    |    |  BancoController  |    |   Domínio   |
+|   do Usuário   |----|                   |----|             |
+|                |    | - sacar()         |    | - Conta     |
+|                |    | - depositar()     |    | - Transação |
+|                |    | - transferir()    |    | - Cliente   |
+|                |    | - consultarSaldo()|    |             |
++----------------+    +-------------------+    +-------------+
+
+
+2. CONTROLADOR DE CASOS DE USO
+
+*Características:*
+-Cada caso de uso tem seu próprio controlador específico
+-Maior coesão e responsabilidade bem definida
+-Mais fácil de manter e testar
+
+*Exemplo - Sistema Bancário:*
+[Cliente] → [SaqueController] → [Conta, Transação]
+[Cliente] → [DepositoController] → [Conta, Transação]
+[Cliente] → [TransferenciaController] → [Conta, Transação]
+
+
+*Diagrama:*
++----------------+    +-------------------+    +-------------+
+|   Interface    |    |  SaqueController  |    |   Domínio   |
+|   do Usuário   |----|                   |----|             |
+|                |    | - executarSaque() |    | - Conta     |
++----------------+    +-------------------+    | - Transação |
+                     +-------------------+    |             |
+                     |DepositoController |    +-------------+
+                     |                   |
+                     | - executarDeposito|
+                     +-------------------+
+                     +-----------------------+
+                     |TransferenciaController|
+                     |                       |
+                     | - executarTransferencia|
+                     +-----------------------+
+
+COMPARAÇÃO DAS ABORDAGENS
+
+CONTROLADOR DE FACHADA
+*Vantagens:*
+-Simplicidade na arquitetura
+-Ponto único de controle
+-Menor número de classes
+
+*Desvantagens:*
+-Pode se tornar uma "God Class"
+-Baixa coesão quando o sistema cresce
+-Dificuldade de manutenção em sistemas complexos
+
+CONTROLADOR DE CASOS DE USO
+*Vantagens:*
+-Alta coesão
+-Fácil manutenção e testes
+-Melhor organização do código
+-Adere ao Single Responsibility Principle
+
+*Desvantagens:*
+-Maior número de classes
+-Complexidade inicial maior
+
+RECOMENDAÇÃO
+
+Para sistemas de médio a grande porte, a abordagem de **Controlador de Casos de Uso** é geralmente preferível devido à melhor coesão, facilidade de manutenção e aderência aos princípios SOLID. A abordagem de Fachada é mais adequada para sistemas pequenos ou protótipos.

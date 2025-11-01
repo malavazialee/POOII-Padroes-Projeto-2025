@@ -1,0 +1,56 @@
+ATIVIDADE 4 - PADRÕES GRASP: LOW COUPLING E HIGH COHESION
+
+ANÁLISE DAS SOLUÇÕES
+
+*SOLUÇÃO 1:*
+Imobiliária → registrarPagamento() → Aluguel → criar() → Pagamento
+
+*SOLUÇÃO 2:*
+Imobiliária → criar() → Pagamento → adicionarPagamento(p) → Aluguel
+
+ANÁLISE POR CRITÉRIOS GRASP
+
+BAIXO ACOPLAMENTO[
+
+*Solução 1:*
+- Alto acoplamento entre Aluguel e Pagamento
+- Aluguel depende diretamente da criação de Pagamento
+- Mudanças em Pagamento afetam Aluguel
+
+*Solução 2:*
+- Baixo acoplamento entre as classes
+- Aluguel e Pagamento são independentes
+- Isolamento de mudanças
+
+*Veredito Low Coupling: Solução 2 é superior*
+
+ALTA COESÃO
+
+*Solução 1:*
+-Alta coesão no Aluguel
+-Contexto natural para criação de pagamentos
+-Lógica de negócio concentrada
+
+*Solução 2:*
+-Baixa coesão na Imobiliária
+-Responsabilidade de criação fora do contexto
+-Lógica espalhada entre classes
+
+*Veredito High Cohesion: Solução 1 é superior*
+
+RECOMENDAÇÃO FINAL
+
+*Solução 2 é a mais apropriada*
+
+*Justificativa:*
+
+A Solução 2 prioriza o baixo acoplamento, que é mais crítico para sistemas sustentáveis a longo prazo. Embora a Solução 1 tenha melhor coesão contextual, o alto acoplamento entre Aluguel e Pagamento cria dependências problemáticas para manutenção e evolução do sistema.
+
+*Benefícios da Solução 2:*
+-Melhor aderência ao Princípio da Responsabilidade Única
+-Classes mais independentes e reutilizáveis
+-Facilidade de testes unitários isolados
+-Flexibilidade para evolução do sistema
+-Preparado para extensões futuras
+
+A arquitetura com baixo acoplamento da Solução 2 oferece melhor sustentabilidade e manutenibilidade, seguindo os princípios de design orientado a objetos e padrões GRASP de forma mais eficaz.

@@ -1,0 +1,73 @@
+--MANUAL DE COMPILAÇÃO E EXECUÇÃO - ATIVIDADE 2
+--UNIVERSIDADE ESTADUAL PAULISTA
+--Faculdade de Ciências e Tecnologia
+--Campus de Presidente Prudente
+--INFORMAÇÕES DO PROJETO
+--Curso: Bacharelado em Ciência da Computação
+
+Disciplina: Programação Orientada a Objetos II
+
+Ano Letivo: 2025
+
+Atividade: 2/5 - Padrões de Projeto (Adapter)
+
+Autor: Alexandre Malavazi
+
+Data de Implementação: Outubro/2025
+
+OBJETIVO DA ATIVIDADE
+Implementar o Padrão de Projeto Adapter para adaptar o uso de um controle de Playstation para um controle de Xbox, permitindo que um sistema projetado para Xbox possa utilizar controles de Playstation através de um adaptador. O padrão demonstra a conversão de interfaces incompatíveis, seguindo as definições do GoF (Gang of Four).
+
+*INSTRUÇÕES TÉCNICAS*
+
+PRÉ-REQUISITOS:
+-Java Development Kit (JDK) versão 8 ou superior
+-Terminal/Prompt de comando
+
+*PROCEDIMENTOS DE COMPILAÇÃO*
+Acesse o diretório do projeto:
+
+
+cd Atividade2Alexandre_Malavazi/src
+Compile todos os arquivos fonte:
+
+javac *.java
+Execute a aplicação:
+
+java Cliente
+ESTRUTURA DE ARQUIVOS
+
+src/
+├── ControleXbox.java                          (Interface alvo)
+├── ControlePlaystation.java                   (Classe adaptee)
+├── AdapterControle_AlexandreMalavazi.java     (Adapter)
+└── Cliente.java                               (Classe principal)
+
+*RESULTADO ESPERADO*
+SAÍDA DO PROGRAMA:
+INICIANDO SISTEMA DE JOGO...
+Computador detectado: Sistema compatível apenas com controles Xbox
+Verificando dispositivos de entrada disponiveis...
+
+PROBLEMA ENCONTRADO: Nenhum controle Xbox detectado!
+DISPOSITIVO ALTERNATIVO: Controle Playstation DualShock 4 conectado
+INICIANDO PROTOCOLO DE ADAPTACAO: Playstation para Xbox
+
+1. Inicializando controle Playstation...
+
+
+VALIDAÇÃO DO PADRÃO:
+-Implementação correta do padrão Adapter
+-Conversão de interface Playstation para Xbox
+-Baixo acoplamento entre sistemas incompatíveis
+-Reutilização de componente existente (ControlePlaystation)
+
+CONTROLE DE VERSÃO
+Versão: 1.0
+
+Status: Implementação concluída
+
+Última revisão: Outubro/2025
+
+Documentação preparada por: Alexandre Malavazi
+Finalidade: Atividade acadêmica - Padrões de Projeto GoF

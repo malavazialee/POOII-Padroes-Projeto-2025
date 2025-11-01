@@ -1,0 +1,72 @@
+--MANUAL DE COMPILAÇÃO E EXECUÇÃO
+--UNIVERSIDADE ESTADUAL PAULISTA
+--Faculdade de Ciências e Tecnologia
+--Campus de Presidente Prudente
+--INFORMAÇÕES DO PROJETO
+--Curso: Bacharelado em Ciência da Computação
+
+Disciplina: Programação Orientada a Objetos II
+
+Ano Letivo: 2025
+
+Atividade: 1/5 - Padrões de Projeto (Factory Method)
+
+Autor: Alexandre Malavazi
+
+Data de Implementação: Outubro/2025
+
+OBJETIVO DA ATIVIDADE
+Implementar o Padrão de Projeto Factory Method para simular uma pizzaria que fabrica diferentes sabores de pizza (Portuguesa, Calabresa, Marguerita, QuatroQueijos), demonstrando o conceito de Virtual Constructor conforme definido pelo GoF.
+
+*INSTRUÇÕES TÉCNICAS*
+
+PRÉ-REQUISITOS:
+-Java Development Kit (JDK) versão 8 ou superior
+-Terminal/Prompt de comando
+
+*PROCEDIMENTOS DE COMPILAÇÃO*
+Acesse o diretório do projeto:
+
+cd Atividade1AlexandreMalavazi/src
+Compile todos os arquivos fonte:
+
+javac *.java
+Execute a aplicação:
+
+bash
+java Cliente
+ESTRUTURA DE ARQUIVOS
+text
+src/
+├── Pizza.java                          (Classe abstrata)
+├── PizzaPortuguesa_AlexandreMalavazi.java
+├── PizzaCalabresa_AlexandreMalavazi.java
+├── PizzaMarguerita_AlexandreMalavazi.java
+├── PizzaQuatroQueijos_AlexandreMalavazi.java
+├── FactoryPizza.java                   (Fábrica concreta)
+└── Cliente.java                        (Classe principal)
+RESULTADO ESPERADO
+SAÍDA DO PROGRAMA:
+
+=== MalavaziPizzas - FACTORY METHOD ===
+Montando Pizza Portuguesa...
+Montando Pizza Calabresa...
+Montando Pizza Marguerita...
+Montando Pizza Quatro Queijos...
+
+
+VALIDAÇÃO DO PADRÃO:
+-Implementação correta do Factory Method
+-Criação de objetos sem expor a lógica de instanciação
+-Baixo acoplamento entre classes
+-Facilidade de extensão para novos sabores
+
+CONTROLE DE VERSÃO
+Versão: 1.0
+
+Status: Implementação concluída
+
+Última revisão: Outubro/2025
+
+Documentação preparada por: Alexandre Malavazi
+Finalidade: Atividade acadêmica - Padrões de Projeto GoF
