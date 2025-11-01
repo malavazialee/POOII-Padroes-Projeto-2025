@@ -23,5 +23,3 @@
 
 ## Como Executar
 Cada atividade possui instruções específicas no seu diretório.
-
-ja coloquei isso no readme
